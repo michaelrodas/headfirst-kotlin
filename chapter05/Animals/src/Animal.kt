@@ -21,11 +21,13 @@ open class Animal {
     }
 }
 
-class Hippo: Animal() {
+class Hippo: Animal() { //If superclass has constructor with parameters, subclass must call it
+//class ConvertibleCar(model_param: String) : Car(model_param: String)
     override val image = "hippo.jpg"
     override val food = "grass"
     override val habitat = "water"
 
+    //Use final to stop allowing functions and properties from being overwritten
     override fun makeNoise() {
         println("Grunt! Grunt!")
     }
