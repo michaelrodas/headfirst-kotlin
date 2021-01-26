@@ -20,7 +20,7 @@ fun getUserChoice(optionsParam: Array<String>): String {
         //Read the user input
         val userInput = readLine()
         //Validate the user input
-        if (userInput != null && userInput in optionsParam) {
+        if (userInput != null && userInput.capitalize() in optionsParam) {
             isValidChoice = true
             userChoice = userInput
         }
