@@ -77,4 +77,19 @@ fun main(args: Array<String>) {
     vehicle.roamMore() //Default implementation from interface
     println("Vehicle velocity ${vehicle.velocity}") //Property inherited from the interface
     vehicle.velocity = 60 //Interfaces have no backing fields, set operation can't be done
+
+    val roamables = arrayOf(Hippo(), Wolf(), Vehicle())
+    for (item in roamables){
+        item.roam()
+        if (item is Animal)
+            item.eat()
+    }
+
+    val vehi = roamables[2]
+    when(vehi){
+        is Vehicle -> println("Brand ${vehi.brand}")
+    }
+
+    val newHippo = roamables[0] as Animal //Or Hippo
+    println(newHippo.food)
 }
